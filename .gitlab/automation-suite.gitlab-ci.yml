@@ -1,0 +1,72 @@
+.automation-suite-tpl:
+  stage: qa
+  image: registry.gitlab.com/sendoso/qa/automation-suite:latest
+  variables:
+    GIT_STRATEGY: none
+    DOTENV_CONFIG_SILENT: "true"
+  before_script:
+    - echo "Initializing test environment for ${AUTOMATION_APP_ENV}"
+    - cd $WORKDIR
+    - set -a
+    - eval "source \$AUTOMATION_${AUTOMATION_APP_ENV^^}"
+    - set +a
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - test-artifacts/
+    reports:
+      junit: test-artifacts/**/test-results.xml
+
+# Staging → 2 parallel jobs
+automation-suite-staging:
+  extends: .automation-suite-tpl
+  parallel:
+    matrix:
+      - SMOKE_TAG: "@smoke1"
+      - SMOKE_TAG: "@smoke2"
+  variables:
+    AUTOMATION_APP_ENV: staging
+  needs:
+    - job: deploy-k8s-staging
+  rules:
+    - if: $PIPELINE_TYPE == 'PRODUCTION_TAG'
+  script:
+    - echo "Cleaning up previous test artifacts..."
+    - rm -rf packages/smoke/e2e/.features-gen
+
+    - echo "Generating BDD test files..."
+    - pnpm --filter=@automation-suite/smoke-e2e bddgen > /dev/null 2>&1
+
+    - echo "Running smoke tests with tag ${SMOKE_TAG}"
+    - |
+      set +e
+      pnpm --filter=@automation-suite/smoke-e2e test --grep "$SMOKE_TAG"
+      TEST_EXIT_CODE=$?
+      set -e
+
+      echo "Test execution completed with exit code ${TEST_EXIT_CODE}"
+
+      echo "Collecting test artifacts..."
+      mkdir -p "$CI_PROJECT_DIR/test-artifacts/smoke-e2e"
+
+      if [ -d "/app/packages/smoke/e2e/playwright-report" ]; then
+        echo "Copying playwright HTML report..."
+        cp -r /app/packages/smoke/e2e/playwright-report "$CI_PROJECT_DIR/test-artifacts/smoke-e2e/"
+      else
+        echo "Warning: playwright-report directory not found"
+      fi
+
+      if [ -d "/app/packages/smoke/e2e/test-results" ]; then
+        echo "Copying test results..."
+        cp -r /app/packages/smoke/e2e/test-results "$CI_PROJECT_DIR/test-artifacts/smoke-e2e/"
+      else
+        echo "Warning: test-results directory not found"
+      fi
+
+      echo "Artifact collection completed"
+
+      if [ "$TEST_EXIT_CODE" -ne 0 ]; then
+        echo "Failing job due to test failures (exit code ${TEST_EXIT_CODE})"
+        exit $TEST_EXIT_CODE
+      fi

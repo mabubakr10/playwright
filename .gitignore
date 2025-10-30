@@ -1,0 +1,9 @@
+.claude
+.env.local
+
+test-results*
+node_modules
+dist
+.pnpm-store
+packages/smoke/e2e/playwright-report
+packages/smoke/e2e/.features-gen

@@ -1,0 +1,7 @@
+services:
+  vs-code:
+    extends:
+      file: compose.yml
+      service: tests
+    entrypoint: []
+    container_name: vs-code-tests

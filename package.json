@@ -1,0 +1,24 @@
+{
+  "name": "automation-suite",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.12.3",
+  "scripts": {
+    "test": "pnpm --filter='!shared' -r test",
+    "test-smoke": "pnpm --filter=@automation-suite/smoke-e2e test",
+    "test-synthetics": "pnpm --filter=@automation-suite/synthetics-e2e test",
+    "lint": "pnpm -r lint",
+    "build": "pnpm -r build"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.0"
+  }
+}

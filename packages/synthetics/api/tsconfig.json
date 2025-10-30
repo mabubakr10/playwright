@@ -1,0 +1,7 @@
+{
+  "extends": "@automation-suite/shared/tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist"
+  }
+}

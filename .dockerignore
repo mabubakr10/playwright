@@ -1,0 +1,5 @@
+.devcontainer
+.env.local
+.gitlab
+Dockerfile
+platform

@@ -1,0 +1,73 @@
+export const send = {
+  loader: "img[alt='Loading']",
+  touchDetails: ".icon-minus",
+  sendingMethodDropDown: ".icon-dropdown-arrow",
+  emailField: "input[placeholder=\"Recipient's Email Address\"]",
+  sendButton: "li#send-button button",
+  closePopup: "span[id='close-send-status-modal']",
+  allSends: "input[inputmode='search']",
+  sendTracker: "button[class*='go-to-send-tracker']",
+  gotItBtn: "span#got-it",
+  searchSend: "input[type=\"search\"]",
+  searchResultTouches: "[class='stl-infinit_scroll__body'] a h3",
+  inventoriedSendsOption: "//span[contains(text(),'Inventoried Sends')]",
+  selectFirstTouch: "(//h5[contains(text(),'YOUR RECENT SENDS')]/parent::div/parent::div//img)[1]",
+  submitButton: "button[class*='submit-mapping']",
+  loaderCSV: ".loader",
+  bulkSendSuccessMessage: ".multiple-egift-link-message",
+  sendCampaignButton: "li#send-button button",
+  successMessageBulkSend: "//*[@class='stl-modal__title multiple-egift-link-message']",
+  enterMessage: "[class='textarea-container'] textarea",
+  enableAddressConfirmation: "[id='ac-enable-btn']",
+  saveAddressConfirmation: "[id='sava-ac-data']",
+  playbookBtn: "a[href='/v2/sends#/playbooks']",
+  playbookSection: "[id='unavailable-playbook-section']",
+  playbookUrl: "/sends#/playbooks",
+  tooltipBlock: ".stl-tooltip.stl-d-block",
+  gotItLinkTooltip: ".pointer.got-it-link",
+  occasionOptions: ".occasion-box-item",
+  unavailablePlaysHeading: "//div[contains(text(), 'Unavailable Plays')]",
+  unavailablePlaySection: "#unavailable-playbook-section",
+  currentBalance: "app-navbar #reka-dropdown-menu-trigger-v-1 div div span:nth-of-type(2)",
+  analyticsCurrentUserBalance: "//button[@aria-expanded=\"false\"]//div//span[2]",
+  acViaEmailText: "td > table > tbody > :nth-of-type(1) > td > table > tbody > :nth-of-type(1) > td > table > tbody > :nth-of-type(2)",
+  confirmOrEditAdress: "a[href^='https://app.staging.sendo.so/address_verification']",
+  confirmAddressButton: "//li//button[@id='confirm-address']",
+  messageField: "textarea[id*='Textarea']",
+  createPartyLink: "#send-button",
+  copyLink: "//span[text()='Copy Link']",
+  noRecipientAddress: "[class='stl-nav__list'] li:nth-child(2) span",
+  redeemGift:"img[src*='egift_card']",
+  redeemEmailField:"#recipient-email",
+  verifyEmailButton:"input[value='Verify Email']",
+  redemptionConfirmation:"You've successfully redeemed your eGift!",
+  getConfirmationMessage:".stl-grid-row.stl-align-items-center p:nth-child(2)",
+  goToSendIssuesButton: "li:nth-child(2) button[class='stl-button'] span",
+  ellipsesButton: "(//button[@aria-label='options'])[1]",
+  approveSendButton: "(//button[text()=' Approve Send'])[1]",
+  confirmApproval: "(//span[text()='Approve send?']/parent::div/parent::div/parent::div//button)[2]",
+  confirmAddressAndChooseGift:"a[title='Address Confirmation Redirection Link']",
+  verifyAddressIsConfirmed:"//div[contains(text(),'We have successfully received your request')]",
+  goToSendTrackerButton:"(//button[normalize-space(.)='Go to Send Tracker'])[1]"
+}
+
+export const sendViaSuccessMessages: any = {
+  singleEmail: "egift-success-send-text",
+  singleShareableLink: "single-egift-link-message",
+  bulkSend: "multiple-egift-link-message",
+  physicalSend: "physical-success-send-text",
+}
+
+export const partylink = {
+  copylink: "#party-link",
+  confirmApproval: "//div[@aria-label='Approve send?']//button[contains(text(),' Yes')]"
+}
+export const meetingBooker = {
+  outReachFrame: "iframe[src*='Sendoso_Integrations']",
+  availableTimeSlot:"//button[contains(@aria-label,'Available time slot button')]",
+  firstName:"#FIRST_NAME",
+  lastName:"#LAST_NAME",
+  email:"#EMAIL",
+  bookMeetingBtn:"//button[text()='Book meeting']",
+  successMessage:"//span[text()='Check your inbox, your eGift has arrived.']"
+}

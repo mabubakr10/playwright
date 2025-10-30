@@ -1,0 +1,39 @@
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CI=true
+    volumes:
+      - .:/app/
+
+      # keep sorted
+      - node-modules-root:/app/node_modules
+      - node-modules-shared:/app/packages/shared/node_modules
+      - playwright-cache:/root/.cache/ms-playwright
+      - pnpm-cache:/root/.cache/pnpm
+      - pnpm-store-local:/app/.pnpm-store
+      - pnpm-store:/root/.local/share/pnpm/store
+      - shared-dist:/app/packages/shared/dist
+
+      # any new workspace should be added here
+      # keep sorted
+      - node-modules-smoke-e2e:/app/packages/smoke/e2e/node_modules
+      - node-modules-synthetics-api:/app/packages/synthetics/api/node_modules
+      - node-modules-synthetics-e2e:/app/packages/synthetics/e2e/node_modules
+
+volumes:
+  # keep sorted
+  node-modules-root:
+  node-modules-shared:
+  playwright-cache:
+  pnpm-cache:
+  pnpm-store-local:
+  pnpm-store:
+  shared-dist:
+
+  # keep sorted
+  node-modules-smoke-e2e:
+  node-modules-synthetics-api:
+  node-modules-synthetics-e2e:

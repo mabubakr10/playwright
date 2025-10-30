@@ -1,0 +1,24 @@
+{
+  "name": "@automation-suite/synthetics-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "pretest": "pnpm --filter @automation-suite/shared build",
+    "test": "playwright test",
+    "report:merge": "playwright merge-reports --reporter html ./blob-report",
+    "test:campaigns": "playwright test --grep '@campaigns'",
+    "test:critical": "playwright test --grep '@critical'",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "dependencies": {
+    "@automation-suite/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

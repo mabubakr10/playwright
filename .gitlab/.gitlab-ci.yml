@@ -1,0 +1,82 @@
+include:
+  - project: "sendoso/cicd"
+    file:
+      - "/jobs/common-settings.gitlab-ci.yml"
+      - "/jobs/danger-review.gitlab-ci.yml"
+      - "/jobs/build-docker.gitlab-ci.yml"
+
+.automation-suite-tpl:
+  stage: test
+  image: $DOCKER_IMAGE
+  variables:
+    GIT_STRATEGY: none
+    DOTENV_CONFIG_SILENT: "true"
+  parallel:
+    matrix:
+      - AUTOMATION_APP_ENV: staging
+        SMOKE_TAG: "@smoke1"
+      - AUTOMATION_APP_ENV: staging
+        SMOKE_TAG: "@smoke2"
+  before_script:
+    - echo "Initializing test environment for ${AUTOMATION_APP_ENV}"
+    - cd $WORKDIR
+    - set -a
+    - eval "source \$AUTOMATION_${AUTOMATION_APP_ENV^^}"
+    - set +a
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - test-artifacts/
+    reports:
+      junit: test-artifacts/**/test-results.xml
+
+automation-suite-test:
+  extends: .automation-suite-tpl
+  needs:
+    - job: build-docker
+  variables:
+    DOCKER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG.$CI_COMMIT_SHORT_SHA
+  rules:
+    - if: $PIPELINE_TYPE == 'MR' && $AUTOMATION_APP_ENV == "development"
+      allow_failure: true
+    - if: $PIPELINE_TYPE == 'MR'
+  script:
+    - echo "Cleaning up previous test artifacts..."
+    - rm -rf packages/smoke/e2e/.features-gen
+
+    - echo "Generating BDD test files..."
+    - pnpm --filter=@automation-suite/smoke-e2e bddgen > /dev/null 2>&1
+
+    - echo "Running smoke tests with tag ${SMOKE_TAG}"
+    - |
+      set +e
+      pnpm --filter=@automation-suite/smoke-e2e test --grep "$SMOKE_TAG"
+      TEST_EXIT_CODE=$?
+      set -e
+
+      echo "Test execution completed with exit code ${TEST_EXIT_CODE}"
+
+      echo "Collecting test artifacts..."
+      mkdir -p "$CI_PROJECT_DIR/test-artifacts/smoke-e2e"
+
+      if [ -d "/app/packages/smoke/e2e/playwright-report" ]; then
+        echo "Copying playwright HTML report..."
+        cp -r /app/packages/smoke/e2e/playwright-report "$CI_PROJECT_DIR/test-artifacts/smoke-e2e/"
+      else
+        echo "Warning: playwright-report directory not found"
+      fi
+
+      if [ -d "/app/packages/smoke/e2e/test-results" ]; then
+        echo "Copying test results..."
+        cp -r /app/packages/smoke/e2e/test-results "$CI_PROJECT_DIR/test-artifacts/smoke-e2e/"
+      else
+        echo "Warning: test-results directory not found"
+      fi
+
+      echo "Artifact collection completed"
+
+      if [ "$TEST_EXIT_CODE" -ne 0 ]; then
+        echo "Failing job due to test failures (exit code ${TEST_EXIT_CODE})"
+        exit $TEST_EXIT_CODE
+      fi

@@ -1,0 +1,31 @@
+{
+  "name": "App Manager",
+  "dockerComposeFile": ["../compose.yml", "./compose.yml"],
+  "service": "vs-code",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "overrideCommand": true,
+  "runServices": ["vs-code"],
+  "containerEnv": {
+    "DEVCONTAINER": "true"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "rvest.vs-code-prettier-eslint"
+      ],
+      "settings": {
+        "git.blame.editorDecoration.enabled": true,
+        "[typescript]" :{
+          "editor.tabSize": 2,
+          "editor.formatOnSave": true,
+          "editor.formatOnType": true
+        },
+        "window": {
+          "title": "🐋 Automation Suite"
+        }
+      }
+    }
+  }
+}
