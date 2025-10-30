@@ -22,6 +22,6 @@ export const marketplace = {
     acceptYourGiftButton:"//button[text()=' Accept your gift']",
     submitButton:"button[type=\"submit\"]",
     state:"//label[text()='State']",
-    subject:"Choose your gift from touch send at sendoso",
+    subject:"Choose your gift from touch send at send",
     confirmChoiceButton:"//button[text()=' Confirm Choice']"
 }

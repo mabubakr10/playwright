@@ -21,9 +21,9 @@ export const users = {
     username: config.auth0HandwrittenNotesUserEmailid,
     password: config.auth0HandwrittenNotesUserPassword
   },
-  sendosoChoiceRedesign: {
-    username: config.auth0SendosoChoiceRedesignUserEmailid,
-    password: config.auth0SendosoChoiceRedesignUserPassword
+  sendChoiceRedesign: {
+    username: config.auth0sendChoiceRedesignUserEmailid,
+    password: config.auth0sendChoiceRedesignUserPassword
   },
   partyLink: {
     username: config.auth0PartyLinkEmailid,

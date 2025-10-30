@@ -19,7 +19,7 @@ When(/^the user clicks on "([^"]*)" tab on left menu panel$/, async function ({p
   await page.locator(`app-navbar >> text=${tabToClick}`).click();
 });
 
-When(/^the user clicks on Sendoso Logo$/, async function ({page}) {
+When(/^the user clicks on send Logo$/, async function ({page}) {
   await page.waitForTimeout(1500)
   await page.locator(`(//img[@alt="Home"]/parent::div)[1]`).first().click();
 });

@@ -241,8 +241,8 @@ class MailHelper {
         await iframe.locator(meetingBooker.availableTimeSlot).first().click();
         // Fill form
         await iframe.locator(meetingBooker.firstName).fill("Afshan");
-        await iframe.locator(meetingBooker.lastName).fill("Sendoso");
-        await iframe.locator(meetingBooker.email).fill(`afshan+${Date.now()}@sendoso.com`);
+        await iframe.locator(meetingBooker.lastName).fill("send");
+        await iframe.locator(meetingBooker.email).fill(`afshan+${Date.now()}@send.com`);
         // Click Book meeting and wait for network activity inside iframe to finish
         await iframe.locator(meetingBooker.bookMeetingBtn).click(),
         await page.waitForTimeout(2000)

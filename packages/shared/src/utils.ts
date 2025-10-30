@@ -1,7 +1,7 @@
 export function generateRandomEmail(): string {
   const timestamp = Date.now();
   const random = Math.random().toString(36).substring(7);
-  return `test-${timestamp}-${random}@sendoso-synthetic.com`;
+  return `test-${timestamp}-${random}@send-synthetic.com`;
 }
 
 export function generateRandomString(length: number = 10): string {
@@ -72,7 +72,7 @@ const tokenCache = new Map<string, string>();
 
 export async function tokenFor(email: string, password: string): Promise<string> {
   const cacheKey = `${email}:${password}`;
-  
+
   if (tokenCache.has(cacheKey)) {
     return tokenCache.get(cacheKey)!;
   }
@@ -90,7 +90,7 @@ export async function tokenFor(email: string, password: string): Promise<string>
     password: password,
     grant_type: 'http://auth0.com/oauth/grant-type/password-realm',
     username: email,
-    realm: 'Sendoso-DB',
+    realm: 'send-DB',
     scope: 'openid profile email'
   };
 

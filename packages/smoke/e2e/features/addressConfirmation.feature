@@ -7,7 +7,7 @@ Feature: Address Confirmation
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user selects the First Touch from the Send Page
     And the user selects "single-person" as a send option on send page
-    And the user enters recipient detail for "Sendoso Direct" single Email
+    And the user enters recipient detail for "send Direct" single Email
     And the user clicks Enable Address Confirmation Button
     And the user clicks Save Address Confirmation Button
     And the user sends the touch and closes success pop up
@@ -16,7 +16,7 @@ Feature: Address Confirmation
     And the user verifies that the recipient has received the email for Address Confirmation via Email for "newInventoryPage" user
     And the user verifies the contents of the email for Address Confirmation via Email
     And the user confirms address on address verification form
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "tracker" option under "Reporting" tab on navigation bar
     Then the user verifies "Order Received" of campaign on send tracker page
 
@@ -26,7 +26,7 @@ Feature: Address Confirmation
     And the user selects the First Touch from the Send Page
     And the user selects "single-person" as a send option on send page
     And the user selects I dont have recipients address option
-    And the user enters recipients detail for Sendoso Direct single Email with no address
+    And the user enters recipients detail for send Direct single Email with no address
     And the user clicks Enable Address Confirmation Button
     And the user clicks Save Address Confirmation Button
     And the user sends the touch and closes success pop up

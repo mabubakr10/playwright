@@ -3,7 +3,7 @@
 Feature: Party Link : Verify functionality of Party link feature
 
   Scenario Outline:
-    Single Price Sendoso Choice Touches | Let Sender Decide | User can see & select the Party Link send method on the single price sendoso choice touches (egift amount selected via dropdown)
+    Single Price send Choice Touches | Let Sender Decide | User can see & select the Party Link send method on the single price send choice touches (egift amount selected via dropdown)
 
     Given the user adds credentials for "partyLink"
     And the user clicks on "sends" option under "Send" tab on navigation bar

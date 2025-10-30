@@ -21,4 +21,4 @@ Feature: Create new team in teams section
 
     Examples:
       | team-type          | role    | team-name | funding-source | domain       |
-      | Account Management | Manager | test05-   | AHT FS 01      | @sendoso.com |
+      | Account Management | Manager | test05-   | AHT FS 01      | @send.com |

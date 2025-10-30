@@ -17,7 +17,7 @@ When(/^the user enter recipeint address$/, async function ({page}) {
     await page.locator(marketplace.address).fill("Trichtenhausenstrasse 35")
     await page.locator(marketplace.city).fill("Zurich")
     await page.locator(marketplace.zip).fill("8321")
-    await page.locator(marketplace.email).fill("afshanshakoor@sendoso.com")
+    await page.locator(marketplace.email).fill("afshanshakoor@send.com")
     await page.locator(marketplace.notes).fill("This is marketplace touch send")
 });
 When(/^the user click on Send it button$/, async function ({page}) {
@@ -26,7 +26,7 @@ When(/^the user click on Send it button$/, async function ({page}) {
 
 Given(/^the user enter the recipient details without address$/, async function ({page}) {
     await page.locator(marketplace.firstName).fill("Amna")
-    await page.locator(marketplace.lastName).fill("Sendoso")
+    await page.locator(marketplace.lastName).fill("send")
     await page.locator(marketplace.email).fill("amna.asadAcViaEmail@uugclxt3.mailosaur.net")
     await page.locator(marketplace.notes).fill("This is marketplace touch send")
 });

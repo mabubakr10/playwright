@@ -94,13 +94,13 @@ When(/^the user selects the packing method$/, async function ({page}) {
     await page.locator(campaigns.continuePackingBtn).click();
 });
 
-When(/^the user sets currency "([^"]*)" for sendoso choice redesign touch$/, async function ({page},currency) {
+When(/^the user sets currency "([^"]*)" for send choice redesign touch$/, async function ({page},currency) {
     await page.locator(campaignsPage.eGiftSelectionPage.currency).click()
     await page.locator(campaignsPage.eGiftSelectionPage.currency).fill(currency);
     await page.keyboard.press('Enter');
 });
 
-When(/^the user sets amount "([^"]*)" for sendoso choice redesign touch$/, async function ({page},amount) {
+When(/^the user sets amount "([^"]*)" for send choice redesign touch$/, async function ({page},amount) {
     await page.locator(campaignsPage.eGiftSelectionPage.amount).click()
     await page.locator(campaignsPage.eGiftSelectionPage.amount).waitFor({ state: 'visible', timeout: 20000 });
     await page.locator(campaignsPage.eGiftSelectionPage.amount).fill(amount);
@@ -112,22 +112,22 @@ When(/^the user selects eGift card "([^"]*)"$/, async function ({page},eGift) {
     await page.locator(`//span[contains(text(),'${eGift}')]`).click()
 });
 
-When(/^the user clicks on "([^"]*)" button on sendoso choice redesign page$/, async function ({page},buttonName) {
+When(/^the user clicks on "([^"]*)" button on send choice redesign page$/, async function ({page},buttonName) {
     await page.locator(`button[aria-label="${buttonName}"]`).click()
 });
 
-When(/^the user enters the name for sendoso choice redesign touch$/, async function ({page}) {
+When(/^the user enters the name for send choice redesign touch$/, async function ({page}) {
     touchName = Math.random().toString().substr(2, 5)
     await page.locator(campaignsPage.touchDetailsAndSettings.touchName).click()
     await page.locator(campaignsPage.touchDetailsAndSettings.touchName).type(touchName);
 });
 
-When(/^the user enters display name for sendoso choice redesign touch$/, async function ({page}) {
+When(/^the user enters display name for send choice redesign touch$/, async function ({page}) {
     await page.locator(campaignsPage.touchDetailsAndSettings.displayName).click()
     await page.locator(campaignsPage.touchDetailsAndSettings.displayName).type(displayName)
 });
 
-When(/^the user sets type to "([^"]*)" for sendoso choice redesign touch$/, async function ({page},touchType) {
+When(/^the user sets type to "([^"]*)" for send choice redesign touch$/, async function ({page},touchType) {
     const touchToClick = `#${touchType}`;
     await page.locator(touchToClick).click()
     const clickedStatus =
@@ -151,7 +151,7 @@ When(/^the user sets source of funds "([^"]*)"$/, async function ({page},sourceO
     }
 });
 
-When(/^the user assigns sendoso choice redesign touch to group$/, async function ({page}) {
+When(/^the user assigns send choice redesign touch to group$/, async function ({page}) {
     await page.locator(campaignsPage.touchDetailsAndSettings.assignTouch).click()
     await page.locator(campaignsPage.touchDetailsAndSettings.addLimits).click()
 });
@@ -181,7 +181,7 @@ Then(/^the user verifies the "([^"]*)" under "([^"]*)" on touch summary page$/, 
     expect(actualText).toContain(data);
 });
 
-Then(/^the user "([^"]*)" the sendoso choice touch$/, async function ({page},action) {
+Then(/^the user "([^"]*)" the send choice touch$/, async function ({page},action) {
     await page.locator(campaignsPage.touchSummary.activateTouch).click()
     const activateNowButton = page.locator(campaignsPage.touchSummary.activateNow).first();
     await activateNowButton.waitFor({ state: 'visible', timeout: 5000 });
@@ -307,7 +307,7 @@ Given(/^the user "([^"]*)" the "([^"]*)" touch$/, async function ({page},operati
     await page.locator(dots + `//a[contains(text(),'${operation}')]`).click();
 });
 
-Given(/^the user archives the Sendoso Choice touch$/, async function ({page}) {
+Given(/^the user archives the send Choice touch$/, async function ({page}) {
     await page.locator(campaignsPage.touchSummary.dropDownBtn).click();
     await page.locator(campaignsPage.touchSummary.archiveButton).click();
     await page.locator(campaignsPage.touchSummary.confirmOperation).first().click();

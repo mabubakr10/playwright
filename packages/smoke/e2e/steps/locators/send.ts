@@ -63,7 +63,7 @@ export const partylink = {
   confirmApproval: "//div[@aria-label='Approve send?']//button[contains(text(),' Yes')]"
 }
 export const meetingBooker = {
-  outReachFrame: "iframe[src*='Sendoso_Integrations']",
+  outReachFrame: "iframe[src*='send_Integrations']",
   availableTimeSlot:"//button[contains(@aria-label,'Available time slot button')]",
   firstName:"#FIRST_NAME",
   lastName:"#LAST_NAME",

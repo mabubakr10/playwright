@@ -6,7 +6,7 @@ export const inventory = {
     deleteInventoryOption: "//tbody//tr[1]//td[9]//ul//li[2]",
     confirmDeleteInventoryButton: "//*[@id='__nuxt']/div/main/div/section/div/div/div/div[3]/div[4]/div[2]/div/footer/div[2]/button",
     firstProductInventoryPage: "tbody tr:first-of-type td:nth-of-type(2) div div div",
-    productTitleUpdate: "[placeholder='e.g. Sendoso socks']",
+    productTitleUpdate: "[placeholder='e.g. send socks']",
     saveAndCloseButton: "html > body > div:nth-of-type(2) > main > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(7) > div:nth-of-type(2) > button",
     saveChangesButton: "/html/body/div[2]/main/div[2]/div[2]/div/div[11]/div/div/div/div/footer/div/div/div[2]/button",
     nextButton: "//button[@id=\"product_step_button\"]",

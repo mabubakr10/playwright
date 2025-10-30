@@ -223,7 +223,7 @@ test.describe('Recipient Experience Tests', () => {
         address2: "",
         city: "San Francisco",
         countryCode: "US",
-        email: "abubakr@sendoso.com",
+        email: "abubakr@send.com",
         name: "abubakr",
         phoneNumber: "",
         postalCode: "94111 3205",

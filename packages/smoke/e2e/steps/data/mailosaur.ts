@@ -8,6 +8,6 @@ export const mailData = {
     assertion_ac_via_email_subject: "[NON-PROD] Confirm your address with Iqra Dilawar from New Inventory",
     assertion_ac_via_email_text: "Please confirm your delivery address",
     email_subject_for_redemption_flow: "[NON-PROD] Enjoy this Coffee eGift for $5!",
-    marketplace_ac_email_subject:"Choose your gift from touch send at sendoso",
-    meeting_booker_email_subject: "Choose your gift from New Camapigns at sendoso-company"
+    marketplace_ac_email_subject:"Choose your gift from touch send at send",
+    meeting_booker_email_subject: "Choose your gift from New Camapigns at send-company"
 }

@@ -13,7 +13,7 @@ Feature: Smart Send: Verify user is able to search/send via smart send
         And the user selects first product on smart send page
         And the user clicks on send it now button
         And the user enters recipient details and send
-        And the user clicks on Sendoso Logo
+        And the user clicks on send Logo
         And the user clicks on "tracker" option under "Reporting" tab on navigation bar
         Then the user verifies date and time for recent campaign
         And the user verifies smart send campaign name on send tracker page
@@ -32,7 +32,7 @@ Feature: Smart Send: Verify user is able to search/send via smart send
         And the user clicks on send it now button
         And the user clicks on I have the recipient's address toggle
         And the user enters recipient address and send
-        And the user clicks on Sendoso Logo
+        And the user clicks on send Logo
         And the user clicks on "tracker" option under "Reporting" tab on navigation bar
         Then the user verifies date and time for recent campaign
         And the user verifies smart send campaign name on send tracker page

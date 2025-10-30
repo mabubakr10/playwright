@@ -23,7 +23,7 @@ Feature: New Campaigns Flow
     And the user waits for "Campaign Tracking" page to load
     And the user clicks on " Save & Continue" button
     And the user clicks on Activate you campaign button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created campaign on Send Page "Physical"
@@ -56,12 +56,12 @@ Feature: New Campaigns Flow
     And the user waits for "Campaign Tracking" page to load
     And the user clicks on " Save & Continue" button
     And the user clicks on Activate you campaign button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "eGifts" touch on send page
     And the user selects the created campaign on Send Page "eGifts"
     And the user selects "single-person" as a send option on send page
-    And the user enters recipients detail for Sendoso Direct single Email with no address
+    And the user enters recipients detail for send Direct single Email with no address
     And the user Enable Meeting Booker functionality
     Then the user sends the touch and closes success pop up
     And the user verifies that the email has been received for meeting booker flow
@@ -83,7 +83,7 @@ Feature: New Campaigns Flow
     And the user waits for "Campaign Tracking" page to load
     And the user clicks on " Save & Continue" button
     And the user clicks on Activate you campaign button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created campaign on Send Page "Physical"
@@ -120,7 +120,7 @@ Feature: New Campaigns Flow
     And the user waits for "Campaign Tracking" page to load
     And the user clicks on " Save & Continue" button
     And the user clicks on Activate you campaign button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created campaign on Send Page "Physical"

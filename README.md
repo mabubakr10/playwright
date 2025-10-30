@@ -1,4 +1,4 @@
-# Synthetics Test Suite
+# Playwright Automation Suite
 
 Automated testing suite with dynamic test types and New Relic integration.
 
@@ -6,8 +6,8 @@ Automated testing suite with dynamic test types and New Relic integration.
 
 1. **Clone and install:**
    ```bash
-   git clone git@gitlab.com:sendoso/qa/automation-suite.git
-   cd automation-suite
+   git clone git@github.com:mabubakr10/playwright.git
+   cd playwright
    make setup
    ```
 

@@ -1,6 +1,6 @@
 .automation-suite-tpl:
   stage: qa
-  image: registry.gitlab.com/sendoso/qa/automation-suite:latest
+  image: registry.gitlab.com/send/qa/automation-suite:latest
   variables:
     GIT_STRATEGY: none
     DOTENV_CONFIG_SILENT: "true"

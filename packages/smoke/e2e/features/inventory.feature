@@ -54,8 +54,8 @@ Feature: Create Apparel product from manager portal
 
     Examples:
       | ship notices | productName | status |
-      | shipNotices  | Sendoso Hat IRE | In Transit |
-      # | shipNotices  | Sendoso Hat UK | In Transit  |
+      | shipNotices  | send Hat IRE | In Transit |
+      # | shipNotices  | send Hat UK | In Transit  |
 
   @smoke2
   Scenario Outline: Verify that user is able to create print on demand product from manager portal
@@ -75,4 +75,3 @@ Feature: Create Apparel product from manager portal
     Examples:
       | name             |
       | POD product name |
-

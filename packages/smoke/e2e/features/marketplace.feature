@@ -13,7 +13,7 @@ Feature: Send experience
     And the user clicks on I have the recipient's address toggle
     And the user enter recipeint address
     And the user click on Send it button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "tracker" option under "Reporting" tab on navigation bar
     And the user verify touch name "Smart_Send_Campaign" and touch status "Order Received" on send tracker
 
@@ -28,7 +28,7 @@ Feature: Send experience
 #    And the user enter the recipient details without address
 #    And the user check "<Allow Recipient to exchange gift>" checkbox
 #    And the user click on Send it button
-#    And the user clicks on Sendoso Logo
+#    And the user clicks on send Logo
 #    When the user clicks on "tracker" option under "Reporting" tab on navigation bar
 #    And the user verify touch name "Smart_Send_Campaign" and touch status "Offer Sent" on send tracker
 #    And the user verifies that the recipient has received the email for marketplace address confirmation

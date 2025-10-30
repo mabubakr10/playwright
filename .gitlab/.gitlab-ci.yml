@@ -1,5 +1,5 @@
 include:
-  - project: "sendoso/cicd"
+  - project: "send/cicd"
     file:
       - "/jobs/common-settings.gitlab-ci.yml"
       - "/jobs/danger-review.gitlab-ci.yml"

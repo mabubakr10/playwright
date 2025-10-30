@@ -177,7 +177,7 @@ Then(/^the user verify the message in preview window$/, async function ({page}) 
 
 When(/^the user enters recipient detail for "([^"]*)" single Email$/, async function ({page},touchType) {
      campaignName = faker.lorem.words(4)
-   if(touchType=="Sendoso Direct")
+   if(touchType=="send Direct")
        await page.locator(campaigns.enterRecipientEmail).fill(addressConfirmationData.elementText.campaign_email);
    else
        await page.locator(campaigns.enterRecipientEmail).fill(addressConfirmationData.newCampaignCreationData.email);
@@ -190,7 +190,7 @@ When(/^the user enters recipient detail for "([^"]*)" single Email$/, async func
     await page.locator(campaigns.zip_code).fill(addressConfirmationData.elementText.campaign_ZIP);
 });
 
-When(/^the user enters recipients detail for Sendoso Direct single Email with no address$/, async function ({page}) {
+When(/^the user enters recipients detail for send Direct single Email with no address$/, async function ({page}) {
      campaignName = faker.lorem.words(2)
     await page.locator(campaigns.input_sender_name).fill(campaignName);
     await page.locator(campaigns.enterRecipientEmail).fill(addressConfirmationData.elementText.campaign_email);
@@ -373,7 +373,7 @@ When(/^user fill the party link form for "([^"]*)" touch$/, async function ({},t
     await page2.locator(marketplace.acceptYourGiftButton).waitFor({state: 'visible'});
     await page2.locator(marketplace.acceptYourGiftButton).click()
     await page2.locator(marketplace.name).fill("Afshan Shakoor")
-    await page2.locator(marketplace.email).fill("afshanshakoor@sendoso.com")
+    await page2.locator(marketplace.email).fill("afshanshakoor@send.com")
     await page2.locator(marketplace.submitButton).waitFor({state: 'visible'});
     await page2.locator(marketplace.submitButton).click()
     await page2.waitForTimeout(1000)

@@ -17,7 +17,7 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user assigns the touch to Groups
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "eGifts" touch on send page
     And the user selects the created Touch from the Send Page "eGifts"
@@ -30,7 +30,7 @@ Feature: Campaigns - Touch Creation
 
     Examples:
       | id                           | minamount | maxamount | email                      |
-      | collapse-international-egift | 30        | 100       | afshan.shakoor@sendoso.com |
+      | collapse-international-egift | 30        | 100       | afshan.shakoor@send.com |
 
   @smoke2 @smokedev
   Scenario Outline: Verify that user is able to create inventoried campaign and send via new send experience
@@ -49,12 +49,12 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user clicks the finish button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created Touch from the Send Page "Physical"
     And the user selects "single-person" as a send option on send page
-    And the user enters recipient detail for "Sendoso Direct" single Email
+    And the user enters recipient detail for "send Direct" single Email
     Then the user sends the touch and closes success pop up
     When the user clicks on "analytics" option under "Reporting" tab on navigation bar
 #    And the user clicks on Hamburger icon
@@ -95,14 +95,14 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user clicks the finish button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created bundle from the Send Page "Physical"
     And the user selects product to add in bundle
     And the user clicks on next button send page
     And the user selects "single-person" as a send option on send page
-    And the user enters recipient detail for "Sendoso Direct" single Email
+    And the user enters recipient detail for "send Direct" single Email
     Then the user sends the touch and closes success pop up
 
     Examples:
@@ -124,12 +124,12 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user clicks the finish button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created Touch from the Send Page "Physical"
     And the user selects "single-person" as a send option on send page
-    And the user enters recipient detail for "Sendoso Direct" single Email
+    And the user enters recipient detail for "send Direct" single Email
     Then the user sends the touch and closes success pop up
 
     Examples:
@@ -151,25 +151,25 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user clicks the finish button
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created Touch from the Send Page "Physical"
     And the user selects "single-person" as a send option on send page
-    And the user enters recipient detail for "Sendoso Direct" single Email
+    And the user enters recipient detail for "send Direct" single Email
     And the user enters "<Message>" inside message field
     Then the user sends the touch and closes success pop up
 
     Examples:
       | id                               | Message                  |
-      | collapse-handwritten-note-egifts | Sendoso Automation Suite |
+      | collapse-handwritten-note-egifts | send Automation Suite |
 
   @smoke2
-  Scenario Outline: Verify Manager User is able to create and send Sendoso Direct Type touch
+  Scenario Outline: Verify Manager User is able to create and send send Direct Type touch
     Given the user adds credentials for "oldCampaignCreation"
     When the user clicks on "campaigns" option under "Configure" tab on navigation bar
     And the user clicks on the create Campaign button
-    And the user selects "<sendosodirect>" touch
+    And the user selects "<senddirect>" touch
     And the user clicks on the Next Step button on marketplace touch creation
     And the user selects marketplace "<productType>" product
     And the user click on Add to Campaign button button
@@ -179,7 +179,7 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user assigns the touch to Groups
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "Physical" touch on send page
     And the user selects the created Touch from the Send Page "Physical"
@@ -192,58 +192,58 @@ Feature: Campaigns - Touch Creation
     Then the user sends bulk items and verifies the message for "bulkSend"
 
     Examples:
-      | sendosodirect      | productType    |
+      | senddirect      | productType    |
       | Direct Marketplace | Cookie Stack   |
 
   @smoke2
-  Scenario Outline: Verify Manager User is able to create and send Sendoso Choice Type touch
+  Scenario Outline: Verify Manager User is able to create and send send Choice Type touch
 
-    Given the user adds credentials for "sendosoChoiceRedesign"
+    Given the user adds credentials for "sendChoiceRedesign"
     And the user navigated to touch creation page
-    When the user sets currency "<currency>" for sendoso choice redesign touch
-    And the user sets amount "<amount>" for sendoso choice redesign touch
+    When the user sets currency "<currency>" for send choice redesign touch
+    And the user sets amount "<amount>" for send choice redesign touch
     And the user selects eGift card "<eGift1>"
-    And the user clicks on "Next Step" button on sendoso choice redesign page
-    And the user enters the name for sendoso choice redesign touch
-    And the user enters display name for sendoso choice redesign touch
-    And the user sets type to "<ManualTouch>" for sendoso choice redesign touch
+    And the user clicks on "Next Step" button on send choice redesign page
+    And the user enters the name for send choice redesign touch
+    And the user enters display name for send choice redesign touch
+    And the user sets type to "<ManualTouch>" for send choice redesign touch
     And the user sets source of funds "<Source Of Funds>"
-    And the user assigns sendoso choice redesign touch to group
+    And the user assigns send choice redesign touch to group
     And the user "Save" the touch assignment
-    And the user clicks on "Next Step" button on sendoso choice redesign page
+    And the user clicks on "Next Step" button on send choice redesign page
     And the user sets send eGift via option "<Sending Preference>"
-    And the user clicks on "Create" button on sendoso choice redesign page
+    And the user clicks on "Create" button on send choice redesign page
     Then the user is redirected to touch summary page
     And the user expands "eGift Selection" section on touch summary page
     And the user verifies the "<currency>" under "COUNTRY" on touch summary page
     And the user verifies the "<amount>" under "EGIFT AMOUNT" on touch summary page
     And the user verifies the "<eGift1>" under "EGIFT SELECTED" on touch summary page
-    And the user "activate" the sendoso choice touch
+    And the user "activate" the send choice touch
     And the user waits for Global Navigation bar to load
     And the user verifies the campaign has been set to "Active" on campaigns page
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "eGifts" touch on send page
     And the user clicks on the touch on send page
     And the user selects "single-email" as a send option on send page
     And the user enters recipient "<email>" on send page
     Then the user sends the touch and verifies the message for "singleEmail"
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "campaigns" option under "Configure" tab on navigation bar
     And the user "Edit" the "Active" campaign
     And the user edits "Touch Details & Settings" section on touch summary page
-    And the user enters the name for sendoso choice redesign touch
-    And the user clicks on "Update" button on sendoso choice redesign page
+    And the user enters the name for send choice redesign touch
+    And the user clicks on "Update" button on send choice redesign page
     And the user expands "Touch Details & Settings" section on touch summary page
     And the user verifies the "Touch Name" under basic information
     When the user clicks on "campaigns" option under "Configure" tab on navigation bar
     And the user "Edit" the "Active" campaign
-    And the user "deactivate" the sendoso choice touch
+    And the user "deactivate" the send choice touch
     And the user switch to "All" tab
     And the user verifies the touch has been set to "Draft" on touches page
     Examples:
       | currency | amount | eGift1         | Source Of Funds | Sending Preference                 | ManualTouch | email                      |
-      | USA      | 10     | Caribou Coffee | Sender          | No restrictions on sending options | manual      | afshan.shakoor@sendoso.com |
+      | USA      | 10     | Caribou Coffee | Sender          | No restrictions on sending options | manual      | afshan.shakoor@send.com |
 
   @smoke2
   Scenario Outline: Verify that user is able to create a touch with "Shareable Link" option selected as sending preference
@@ -252,28 +252,28 @@ Feature: Campaigns - Touch Creation
     Verify that touch is moved to archived section once archived
     Verify that user is able to send the touch by selecting "Generate eGift link to download" option
 
-    Given the user adds credentials for "sendosoChoiceRedesign"
+    Given the user adds credentials for "sendChoiceRedesign"
     And the user navigated to touch creation page
-    When the user sets currency "<currency>" for sendoso choice redesign touch
-    And the user sets amount "<amount>" for sendoso choice redesign touch
+    When the user sets currency "<currency>" for send choice redesign touch
+    And the user sets amount "<amount>" for send choice redesign touch
     And the user selects eGift card "<eGift1>"
-    And the user clicks on "Next Step" button on sendoso choice redesign page
-    And the user enters the name for sendoso choice redesign touch
-    And the user enters display name for sendoso choice redesign touch
-    And the user sets type to "<ManualTouch>" for sendoso choice redesign touch
+    And the user clicks on "Next Step" button on send choice redesign page
+    And the user enters the name for send choice redesign touch
+    And the user enters display name for send choice redesign touch
+    And the user sets type to "<ManualTouch>" for send choice redesign touch
     And the user sets source of funds "<Source Of Funds>"
-    And the user assigns sendoso choice redesign touch to group
+    And the user assigns send choice redesign touch to group
     And the user "Save" the touch assignment
-    And the user clicks on "Next Step" button on sendoso choice redesign page
+    And the user clicks on "Next Step" button on send choice redesign page
     And the user sets send eGift via option "<Sending Preference>"
-    And the user clicks on "Create" button on sendoso choice redesign page
+    And the user clicks on "Create" button on send choice redesign page
     And the user is redirected to touch summary page
     And the user save touch as Draft
     And the user switch to "All" tab
     And the user verifies the touch has been set to "Draft" on touches page
     And the user "Edit" the "Drafts" touch
-    And the user "activate" the sendoso choice touch
-    And the user clicks on Sendoso Logo
+    And the user "activate" the send choice touch
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "eGifts" touch on send page
     And the user clicks on the touch on send page
@@ -282,13 +282,13 @@ Feature: Campaigns - Touch Creation
     Then the user sends the touch and verifies the message for "singleShareableLink"
     When the user clicks on "campaigns" option under "Configure" tab on navigation bar
     And the user "Edit" the "Active" touch
-    And the user archives the Sendoso Choice touch
+    And the user archives the send Choice touch
     And the user switch to "All" tab
     And the user verifies the touch has been set to "Completed" on touches page
 
     Examples:
       | currency | amount | eGift1         | Sending Preference                 | Source Of Funds | ManualTouch | email                      |
-      | USA      | 10     | Caribou Coffee | Limit send option to sharable link | Sender          | manual      | afshan.shakoor@sendoso.com |
+      | USA      | 10     | Caribou Coffee | Limit send option to sharable link | Sender          | manual      | afshan.shakoor@send.com |
 
   @smoke2
   Scenario Outline: Verify that user is able to archive the touch before activating it
@@ -298,25 +298,25 @@ Feature: Campaigns - Touch Creation
     Verify that user is able to edit "Touch Details & Settings" section
     Verify that correct and same amount is displayed on touch summary page and footer
 
-    Given the user adds credentials for "sendosoChoiceRedesign"
+    Given the user adds credentials for "sendChoiceRedesign"
     And the user navigated to touch creation page
-    When the user sets currency "<currency>" for sendoso choice redesign touch
-    And the user sets amount "<amount>" for sendoso choice redesign touch
+    When the user sets currency "<currency>" for send choice redesign touch
+    And the user sets amount "<amount>" for send choice redesign touch
     And the user selects eGift card "<eGift1>"
-    And the user clicks on "Next Step" button on sendoso choice redesign page
-    And the user enters the name for sendoso choice redesign touch
-    And the user enters display name for sendoso choice redesign touch
+    And the user clicks on "Next Step" button on send choice redesign page
+    And the user enters the name for send choice redesign touch
+    And the user enters display name for send choice redesign touch
     And the user verifies the touch "<amount>" against selected "<currency>" in header & footer
-    And the user sets type to "<ManualTouch>" for sendoso choice redesign touch
+    And the user sets type to "<ManualTouch>" for send choice redesign touch
     And the user sets source of funds "<Source Of Funds>"
-    And the user assigns sendoso choice redesign touch to group
+    And the user assigns send choice redesign touch to group
     And the user "Save" the touch assignment
-    And the user clicks on "Next Step" button on sendoso choice redesign page
+    And the user clicks on "Next Step" button on send choice redesign page
     And the user sets send eGift via option "<Sending Preference>"
-    And the user clicks on "Create" button on sendoso choice redesign page
+    And the user clicks on "Create" button on send choice redesign page
     And the user is redirected to touch summary page
     And the user verifies the touch "<amount>" against selected "<currency>" in header & footer
-    And the user archives the Sendoso Choice touch
+    And the user archives the send Choice touch
     And the user switch to "All" tab
     And the user verifies the touch has been set to "Completed" on touches page
     And the user "Edit" the "Completed" touch
@@ -324,10 +324,10 @@ Feature: Campaigns - Touch Creation
     And the user verifies the touch can not be "<archived>"
     And the user edits "eGift Selection" section on touch summary page
     And the user removes the product
-    When the user sets currency "<currency2>" for sendoso choice redesign touch
-    And the user sets amount "<amount2>" for sendoso choice redesign touch
+    When the user sets currency "<currency2>" for send choice redesign touch
+    And the user sets amount "<amount2>" for send choice redesign touch
     And the user selects eGift card "<eGift3>"
-    And the user clicks on "Update" button on sendoso choice redesign page
+    And the user clicks on "Update" button on send choice redesign page
     And the user expands "eGift Selection" section on touch summary page
     And the user verifies the "<currency2>" under "COUNTRY" on touch summary page
     And the user verifies the "<eGift3>" under "EGIFT SELECTED" on touch summary page
@@ -354,7 +354,7 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user assigns the touch to Groups
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "eGifts" touch on send page
     And the user selects the created Touch from the Send Page "eGifts"
@@ -386,7 +386,7 @@ Feature: Campaigns - Touch Creation
     And the user waits for Salesforce Tracking page to load
     And the user clicks on the Next Step button on Touch Creation
     And the user assigns the touch to Groups
-    And the user clicks on Sendoso Logo
+    And the user clicks on send Logo
     When the user clicks on "sends" option under "Send" tab on navigation bar
     And the user applies filter for "eGifts" touch on send page
     And the user selects the created Touch from the Send Page "eGifts"
@@ -397,5 +397,4 @@ Feature: Campaigns - Touch Creation
 
     Examples:
       | id                       | email                      |
-      | sendosoExpeienceCollapse | afshan.shakoor@sendoso.com |
-
+      | sendExpeienceCollapse | afshan.shakoor@send.com |
